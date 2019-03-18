@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script src="..\node_modules\jquery\dist\jquery.min.js" charset="utf-8"></script>
+    <style media="screen">
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+      @import url('https://fonts.googleapis.com/css?family=Montserrat');
+      body {
+        min-height: 1600px;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      :root {
+        --margin-base: 1em;
+        --primary-blue: #3232ff;
+      }
+
+
+      #flip, #panel {
+        background-color: #3f3f3f;
+        padding: 5px;
+        text-align: center;
+        color: #f5f5f5;
+        border: 1px solid #ddd;
+        cursor: pointer;
+      }
+
+      #panel {
+        min-height: 5em;
+        padding-top: 3.6em;
+        display: none;
+      }
+
+      .mt2 {margin-top: calc(var(--margin-base)* 2)}
+      .mt4 {margin-top: calc(var(--margin-base) * 4)}
+      .mb2 {margin-bottom: calc(var(--margin-base)* 2)}
+
+
+      /* BUTTON TYPE PROPERTIES */
+
+      /* General class for button and input type button */
+      input[type='button'], a[role="button"],
+      .button, button {
+        cursor: pointer;
+        border: none;
+        text-decoration: none;
+      }
+
+      /* Button colors */
+      .black, .button-black {
+        background-color: #000;
+        color: #fff;
+      }
+
+      [class~='black']:hover, [class~='primary']:hover {
+        opacity: 0.8;
+      }
+
+      .primary, .button-primary {
+        background-color: var(--primary-blue);
+        color: #fff;
+      }
+
+      /* Button sizes */
+      .small, .button-small {
+        height: 2.7em;
+        padding: 0 0.85em 0 0.85em;
+        font-size: 0.7em;
+      }
+
+      .medium, .button-medium {
+        height: 3.2em;
+        padding: 0.8em 1em;
+        font-size: 0.85em;
+      }
+
+      .large, .button-large {
+        height: 4.1em;
+        padding: 1.1em 1.2em;
+        font-size: 0.9em;
+      }
+
+
+    </style>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/icons8-google-100.png" type="img/png">
+    <title>Learning jQuery</title>
+  </head>
+  <body>
+    <h1>Learning JQuery</h1>
+
+    <!-- Use of selector 'this'-->
+    <h2>Use of selector "this"</h2>
+    <p id="test">This text would disappear</p>
+    <hr>
+
+    <!-- Using class selector -->
+    <h2>Hiding multiple elements with the same class</h2>
+    <p class="text">This will disappear too</p>
+    <input class="text" type="text" name="" value="Testing" disabled>
+    <br><br>
+
+    <!-- This button hides elements -->
+    <input id="hide" type="button" value="Hide All">
+    <hr>
+
+    <!-- Multiple event handlers -->
+    <h2>Multiple event handlers to one element</h2>
+    <p id="events">Multiple events on me...</p>
+    <hr>
+
+    <!-- Show, hide and toggle methods -->
+    <h2>Show and hide with speed parameter methods</h2>
+    <p class="show-and-hide">Small paragraph</p>
+    <p class="show-and-hide">Another small paragraph</p>
+    <br>
+    <input id="hide-elements" type="button" value="Hide">
+    <input id="show-elements" type="button" value="Show">
+    <input id="toggle-elements" type="button" value="Hide/Show">
+    <hr>
+
+    <!-- Fade In and Fade Out-->
+    <h2>Fade In and Out methods</h2>
+    <div id="fade-in-and-out-1" style="background-color: yellow; margin-top: 2rem; min-height: 5rem;">Fade In</div>
+    <div id="fade-in-and-out-2" style="background-color: green; margin-top: 2rem; min-height: 5rem;">Fade in "slow"</div>
+    <div id="fade-in-and-out-3" style="background-color: blue; margin-top: 2rem; min-height: 5rem;">Fade in 2000</div><br>
+    <input id="fade-in-button" type="button" value="Fade In Elements">
+    <hr>
+
+    <!-- Slide -->
+    <h2>Slide Up and Down</h2>
+    <div id="flip">Click to slide</div>
+    <div id="panel">This panel slides uuuup and doooooooown</div>
+    <hr>
+
+    <!-- Animate -->
+    <h2>Animate</h2>
+    <div id="div-to-animate" style="height:100px;width:100px;background-color:#00ff00;position:relative"></div>
+    <input class="black medium mt4" id="multiple-css-props" type="button" value="Multiple CSS Properties"></input>
+    <input class="black medium" type="button" id="basic-animation-button" value="Basic Animation">
+    <input class="black medium" type="button" id="using-relative-values" value="Using Relative Values">
+    <input class="black medium" type="button" id="using-predefined-values" value="Using Predefined Values">
+    <input class="black medium" type="button" id="using-queue-functionality" value="Using Queue Functionality">
+    <br>
+    <hr>
+
+    <!-- Get Content-->
+    <h2>Get Content</h2>
+    <p id="the-text"><b>Some</b> text in a paragraph tag</p>
+    <button class="primary button-medium mt2" id="get-content-text">Show Text</button>
+    <button class="primary button-medium" id="get-content-html">Show HTML</button>
+    <button class="primary button-medium" id="get-content-attribute">Show Attribute</button>
+    <hr>
+    <br>
+
+    <!-- Set Content-->
+    <h2>Set Content</h2>
+    <p id="testing-text">Just a paragraph to test SET methods</p>
+    <p id="other-testing-text">Just another paragraph</p>
+    <input class="mb2" type="text" id="for-testing-too"><br>
+
+    <button class="black medium" id="for-setting-text">Set text</button>
+    <button class="black medium" id="for-setting-html">Set HTML</button>
+    <button class="black medium" id="for-setting-values">Set Value</button>
+
+    <!-- Add Content -->
+    <h2>Add content</h2>
+    <p id="some-text">Paragraph</p>
+    <ol>
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ol>
+    <button class="black medium" id="for-appending-text">Append text</button>
+    <button class="black medium" id="for-appending-list-items">Append list item</button>
+    <br>
+    <hr>
+
+  </body>
+  <script src="selectors.js" charset="utf-8"></script>
+</html>
