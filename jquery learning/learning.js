@@ -156,5 +156,11 @@ $(document).ready(function(){
   $("#for-appending-list-items").click(function(){
     $("ol").append("<li>Appended item</li>");
   });
-  
+
+  // prepend
+  $("#for-preppending-text").click(function(){
+    $("#some-text").prepend("<i>Some preppended text</i> ");
+  });
+
+
 });
