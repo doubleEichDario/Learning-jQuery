@@ -115,6 +115,7 @@ $(document).ready(function(){
   });
 
   // GET CONTENT - text(), html(), and val()
+
   // text
   $("#get-content-text").click(function(){
     alert("Text: " + $("#the-text").text());
@@ -162,5 +163,43 @@ $(document).ready(function(){
     $("#some-text").prepend("<i>Some preppended text</i> ");
   });
 
+  // REMOVE ELEMENTS/CONTENT
+
+  // remove
+  $("#for-removing-elements").click(function(){
+    $("#removable-div").remove();
+  });
+
+  $("#for-removing-filtered-elements").click(function(){
+    $("p").remove(".test");
+  });
+
+  // empty
+  $("#for-emptying-divs").click(function(){
+    $("#removable-div").empty();
+  });
+
+  // GET AND SET CSS CLASSES
+
+  // addClass()
+  $("#for-adding-classes").click(function(){
+    $("#this-is-going-to-be-blue, h3, #important-paragraph").addClass("blue");
+    $("#important-paragraph").addClass("important");
+  });
+
+  // removeClass()
+  $("#for-removing-classes").click(function(){
+    $("#important-paragraph, h3").removeClass("blue");
+  });
+
+  // toggleClass
+  $("#for-toggling-class").click(function(){
+    $("#important-paragraph").toggleClass("important");
+  });
+
+  // css()
+  $("#for-getting-css").click(function(){
+    $("#output").text($("#panel").css("background-color"));
+  });
 
 });

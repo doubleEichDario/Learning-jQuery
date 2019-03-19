@@ -14,8 +14,15 @@
       :root {
         --margin-base: 1em;
         --primary-blue: #3232ff;
+        --some-tint-of-blue: #4c4cff;
+        --html-silver: #c0c0c0;
       }
 
+      /* TESTING CLASSES */
+
+      .test {
+        color: red;
+      }
 
       #flip, #panel {
         background-color: #3f3f3f;
@@ -31,6 +38,17 @@
         padding-top: 3.6em;
         display: none;
       }
+
+      .blue {
+        color: var(--some-tint-of-blue);
+      }
+
+      .important {
+        font-size: xx-large;
+        font-weight: bold;
+      }
+
+      /* MARGIN AND PADDING CLASSES */
 
       .mt2 {margin-top: calc(var(--margin-base)* 2)}
       .mt4 {margin-top: calc(var(--margin-base) * 4)}
@@ -79,6 +97,17 @@
         height: 4.1em;
         padding: 1.1em 1.2em;
         font-size: 0.9em;
+      }
+
+      /* cards */
+
+      .card {
+        min-height: 10vh;
+        width: auto;
+        background-color: var(--html-silver);
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
       }
 
 
@@ -163,6 +192,7 @@
     <button class="black medium" id="for-setting-text">Set text</button>
     <button class="black medium" id="for-setting-html">Set HTML</button>
     <button class="black medium" id="for-setting-values">Set Value</button>
+    <hr>
 
     <!-- Add Content -->
     <h2>Add content</h2>
@@ -177,6 +207,32 @@
     <button class="black medium" id="for-preppending-text">Preppend Text</button>
     <br>
     <hr>
+
+    <!-- Remove Elements/Content -->
+    <h2>Remove Elements/Content</h2>
+    <div id="removable-div" class="card mb2">
+      <p id="paragraph-to-remove">This is a paragraph into the div element</p>
+    </div>
+    <p class="test">Paragraph about to remove</p>
+    <p>Paragraph that isn' going anywhere</p>
+    <p class="test">Another paragraph to remove</p>
+    <button class="primary medium" id="for-removing-elements">Remove Elements</button>
+    <button class="black medium" id="for-emptying-divs">Empty</button>
+    <button class="primary medium" id="for-removing-filtered-elements">Remove All "test" class paragraphs</button>
+    <br>
+    <hr>
+
+    <!-- Get and Set Classes -->
+    <h2>Get and Set Classes</h2>
+    <p id="this-is-going-to-be-blue">Some paragraph to receive classes</p>
+    <h3>A heading to receive classes too</h3>
+    <p id="important-paragraph">Another paragraph to receive classes. It's going to be Important!</p>
+    <p id="output"></p>
+    <button class="black medium" id="for-adding-classes">Add Classes</button>
+    <button class="black medium" id="for-removing-classes">Remove Classes</button>
+    <button class="primary medium" id="for-toggling-class">Toggle Class</button>
+    <button class="primary medium" id="for-getting-css">Get CSS</button>
+
 
   </body>
   <script src="learning.js" charset="utf-8"></script>
